@@ -1,7 +1,7 @@
 ﻿using System;
-using     MicroNet.IOC.Helpers;
+using MicroNet.IOC.Helpers;
 
-namespace   MicroNet.Helpers
+namespace MicroNet.Helpers
 {
     public static class TypeExtensions
     {
@@ -32,7 +32,7 @@ namespace   MicroNet.Helpers
 
             // The (openGenericBaseType == openGenericSubType) won't work for the generic types obtained by 
             // calculation [like Type.GetGenericArguments()], because type.FullName might return null.
-            if (ReferenceEquals(openGenericBaseType.Module, openGenericSubType.Module) 
+            if (ReferenceEquals(openGenericBaseType.Module, openGenericSubType.Module)
                 && openGenericBaseType.MetadataToken == openGenericSubType.MetadataToken)
                 return true;
 

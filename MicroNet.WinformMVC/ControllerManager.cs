@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using    MicroNet.WinformMVC.Core;
-using    MicroNet.WinformMVC.Properties;
+using MicroNet.WinformMVC.Core;
+using MicroNet.WinformMVC.Properties;
 
-namespace    MicroNet.WinformMVC
+namespace MicroNet.WinformMVC
 {
     public class ControllerManager : IControllerManager
     {

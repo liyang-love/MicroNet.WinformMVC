@@ -1,11 +1,11 @@
 using System;
 using System.Windows.Forms;
-using    MicroNet.WinformMVC.Action;
-using    MicroNet.WinformMVC.Core;
-using    MicroNet.WinformMVC.DataBinding;
-using    MicroNet.WinformMVC.Navigation;
+using MicroNet.WinformMVC.Action;
+using MicroNet.WinformMVC.Core;
+using MicroNet.WinformMVC.DataBinding;
+using MicroNet.WinformMVC.Navigation;
 
-namespace    MicroNet.WinformMVC
+namespace MicroNet.WinformMVC
 {
     public class Coordinator : Disposable, ICoordinator
     {
@@ -17,14 +17,14 @@ namespace    MicroNet.WinformMVC
         }
 
         ApplicationState _state = ApplicationState.Unstarted;
-	    readonly Session _session;
+        readonly Session _session;
         readonly DataBindingManager _dataBindingManager;
         readonly ActionInvokerProvider _actionInvokerProvider;
         readonly IPairManager _pairManager;
         readonly IControllerManager _controllerManager;
 
         public Coordinator(IPairManager pairManager, IIocWrapper iocWrapper)
-	    {
+        {
             pairManager.VerifyPairs();
             _pairManager = pairManager;
 
@@ -34,7 +34,7 @@ namespace    MicroNet.WinformMVC
 
             iocWrapper.RegisterTypes(this); // Register the ICoordinator itself and all controller and view types
             _controllerManager = new ControllerManager(iocWrapper, pairManager);
-	    }
+        }
 
         /// <summary>
         /// Gets the session.
@@ -68,7 +68,7 @@ namespace    MicroNet.WinformMVC
             var targetPairName = GetPairNameByController(targetControllerName);
             var targetController = GetTargetController(sourceController, targetPairName);
             targetController.InvokeAction(targetActionName, parameters);
-		}
+        }
 
         public void StartApplication(string defaultControllerName)
         {

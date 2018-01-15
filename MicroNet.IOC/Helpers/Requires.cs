@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
-using   MicroNet.Exceptions;
-using     MicroNet.IOC;
+using MicroNet.Exceptions;
+using MicroNet.IOC;
 
-namespace   MicroNet.Helpers
+namespace MicroNet.Helpers
 {
     public static partial class Requires
     {
@@ -80,7 +80,7 @@ namespace   MicroNet.Helpers
         public static void IsConcreteType(Type type, string paramName)
         {
             if (!type.IsClass || type.IsAbstract)
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, 
+                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture,
                     Resources.SuppliedTypeIsNotConcreteType, type.ToFullTypeName()), paramName);
         }
 
@@ -118,7 +118,7 @@ namespace   MicroNet.Helpers
         {
             if (openGenericBaseType.IsAssignableFromGeneric(openGenericSubType))
                 return;
-            
+
             throw new ArgumentException(string.Format(CultureInfo.InvariantCulture,
                 Resources.SuppliedTypeIsNotAssignableFromOpenGenericType,
                 openGenericSubType.ToFullTypeName(),

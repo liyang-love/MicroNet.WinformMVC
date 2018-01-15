@@ -1,4 +1,4 @@
-﻿namespace   MicroNet.Helpers
+﻿namespace MicroNet.Helpers
 {
     /// <summary>
     /// TODO: Update summary.

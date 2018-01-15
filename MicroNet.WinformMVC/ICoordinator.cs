@@ -1,8 +1,8 @@
 using System;
-using    MicroNet.WinformMVC.Action;
-using    MicroNet.WinformMVC.DataBinding;
+using MicroNet.WinformMVC.Action;
+using MicroNet.WinformMVC.DataBinding;
 
-namespace    MicroNet.WinformMVC
+namespace MicroNet.WinformMVC
 {
     public interface ICoordinator : IDisposable
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
-using     MicroNet.IOC;
-using     MicroNet.IOC.Helpers;
+using MicroNet.IOC;
+using MicroNet.IOC.Helpers;
 
-namespace   MicroNet.Helpers
+namespace MicroNet.Helpers
 {
     static partial class Requires
     {

@@ -1,17 +1,17 @@
 using System;
 
-namespace    MicroNet.WinformMVC
+namespace MicroNet.WinformMVC
 {
-	public interface IController : IDisposable
-	{
+    public interface IController : IDisposable
+    {
         /// <summary>
         /// The parent that created this controller.
         /// </summary>
 	    IController Parent { get; }
-	    IView View { get; }
+        IView View { get; }
         ICoordinator Coordinator { get; }
-	    Session Session { get; }
-	    void InvokeAction(string actionName, object[] parameters);
+        Session Session { get; }
+        void InvokeAction(string actionName, object[] parameters);
 
         ///// <summary>
         ///// Display this view (Activate or Show), but do not pass a model to it.
@@ -126,5 +126,5 @@ namespace    MicroNet.WinformMVC
         ///// <param name="model">The model.</param>
         ///// <returns></returns>
         //IActionResult Open<TModel>(string controllerName, TModel model);
-	}
+    }
 }
