@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle(" MicroNet.WinformMVC")]
+[assembly: AssemblyTitle("MicroNet.Views")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct(" MicroNet.WinformMVC")]
+[assembly: AssemblyProduct("MicroNet.Views")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("baf8d5aa-9c1e-4fd4-8b60-aef4ce9a8ab6")]
+[assembly: Guid("dbd895aa-8d03-4b8d-b0e1-b98e6e7d27d8")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

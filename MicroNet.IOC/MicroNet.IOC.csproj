@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5075CD3F-BE3D-41A5-A835-BA13A6A52F92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MicroNet.IOC</RootNamespace>
+    <AssemblyName>MicroNet.IOC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Emit\ConstructorBuilderExtension.cs" />
+    <Compile Include="Emit\EmitAssembly.cs" />
+    <Compile Include="Emit\EmitGenerator.cs" />
+    <Compile Include="Emit\MethodBuilderExtension.cs" />
+    <Compile Include="Exceptions\Exceptions.cs" />
+    <Compile Include="Helpers\EnumerableExtensions.cs" />
+    <Compile Include="Helpers\Requires.cs" />
+    <Compile Include="Helpers\Requires.Internal.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Helpers\TypeExtensions.cs" />
+    <Compile Include="IOC\ActivatorKind.cs" />
+    <Compile Include="IOC\Activities\CompositeInjectionActivity.cs" />
+    <Compile Include="IOC\Activities\InjectionActivity.cs" />
+    <Compile Include="IOC\Activities\InjectionProcess.cs" />
+    <Compile Include="IOC\Collections\ThreadSafeDictionary.cs" />
+    <Compile Include="IOC\Condition\IInjectionCondition.cs" />
+    <Compile Include="IOC\Condition\IInjectionTargetInfo.cs" />
+    <Compile Include="IOC\Condition\InjectionTargetInfo.cs" />
+    <Compile Include="IOC\Configuration\FluentApi\CommonConfigurationApi.cs" />
+    <Compile Include="IOC\Configuration\FluentApi\FuncConfigurationApi.cs" />
+    <Compile Include="IOC\Configuration\FluentApi\ICommonConfigurationApi.cs" />
+    <Compile Include="IOC\Configuration\FluentApi\InstanceConfigurationApi.cs" />
+    <Compile Include="IOC\Configuration\FluentApi\ITypeConfigurationApi.cs" />
+    <Compile Include="IOC\Configuration\FluentApi\ReflectionOrEmitConfigurationApi.cs" />
+    <Compile Include="IOC\Configuration\IConfigurationApi.cs" />
+    <Compile Include="IOC\Configuration\Injection\IConstructorInjectionConfigurationItem.cs" />
+    <Compile Include="IOC\Configuration\Injection\IInjectionConfigurationInterpreter.cs" />
+    <Compile Include="IOC\Configuration\Injection\IMemberInjectionConfigurationItem.cs" />
+    <Compile Include="IOC\Configuration\Injection\InjectionConfigurationGroup.cs" />
+    <Compile Include="IOC\Configuration\Injection\InjectionConfigurationSet.cs" />
+    <Compile Include="IOC\Configuration\IRegistrationProvider.cs" />
+    <Compile Include="IOC\Configuration\Provider\FuncRegistrationProvider.cs" />
+    <Compile Include="IOC\Configuration\Provider\InstanceRegistrationProvider.cs" />
+    <Compile Include="IOC\Configuration\Provider\ReflectionOrEmitRegistrationProvider.cs" />
+    <Compile Include="IOC\Configuration\Provider\ReflectionOrEmitRegistrationProvider.Designer.cs">
+      <DependentUpon>ReflectionOrEmitRegistrationProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOC\Configuration\Provider\RegistrationProvider.cs" />
+    <Compile Include="IOC\ContainerOption.cs" />
+    <Compile Include="IOC\Core\AscendingConstructorSorter.cs" />
+    <Compile Include="IOC\Core\AutoObjectRegistrar.cs" />
+    <Compile Include="IOC\Core\BindingFlagsConstructorFinder.cs" />
+    <Compile Include="IOC\Core\DefaultConstructorSelector.cs" />
+    <Compile Include="IOC\Core\IAutoRegistrationPolicy.cs" />
+    <Compile Include="IOC\Core\IConstructorFinder.cs" />
+    <Compile Include="IOC\Core\IConstructorSelector.cs" />
+    <Compile Include="IOC\Core\IConstructorSorter.cs" />
+    <Compile Include="IOC\Core\IHasKernel.cs" />
+    <Compile Include="IOC\Core\InjectionContext.cs" />
+    <Compile Include="IOC\Core\InjectionOperator.cs" />
+    <Compile Include="IOC\Core\IObjectRegistrar.cs" />
+    <Compile Include="IOC\Core\IObjectResolver.cs" />
+    <Compile Include="IOC\Core\Kernel.cs" />
+    <Compile Include="IOC\Core\Logger.cs" />
+    <Compile Include="IOC\Core\ObjectDescription.cs" />
+    <Compile Include="IOC\Core\ObjectRegistration.cs" />
+    <Compile Include="IOC\Core\ObjectRelation.cs" />
+    <Compile Include="IOC\Core\RegistrationCommitter.cs" />
+    <Compile Include="IOC\Core\RegistrationState.cs" />
+    <Compile Include="IOC\Core\ThreadedRegistrationCommitter.cs" />
+    <Compile Include="IOC\Dependencies\AutowiredDependencyProvider.cs" />
+    <Compile Include="IOC\Dependencies\ConstantDependencyProvider.cs" />
+    <Compile Include="IOC\Dependencies\DependencyProvider.cs" />
+    <Compile Include="IOC\Dependencies\DependencyProviderException.cs" />
+    <Compile Include="IOC\Dependencies\DependencyUpdater.cs" />
+    <Compile Include="IOC\Dependencies\Resolution\DependencyResolver.cs" />
+    <Compile Include="IOC\Exceptions\Exceptions.cs" />
+    <Compile Include="IOC\Extensions\OpenGeneric\OpenGenericConfigurationApi.cs" />
+    <Compile Include="IOC\Extensions\OpenGeneric\OpenGenericRegistrationData.cs" />
+    <Compile Include="IOC\Extensions\OpenGeneric\OpenGenericRegistrationExtensions.cs" />
+    <Compile Include="IOC\Extensions\OpenGeneric\OpenGenericRequestHandler.cs" />
+    <Compile Include="IOC\Helpers\ExceptionFormatter.cs" />
+    <Compile Include="IOC\Helpers\ParameterException.cs" />
+    <Compile Include="IOC\Helpers\SystemHelper.cs" />
+    <Compile Include="IOC\Helpers\TypeExtensions.cs" />
+    <Compile Include="IOC\ILifetimeScope.cs" />
+    <Compile Include="IOC\Injection\Emit\DummyEmitInjector.cs" />
+    <Compile Include="IOC\Injection\Emit\EmitInjectorBuilder.cs" />
+    <Compile Include="IOC\Injection\Emit\EmitInjectorKey.cs" />
+    <Compile Include="IOC\Injection\Emit\EmitInjectorManager.cs" />
+    <Compile Include="IOC\Injection\Emit\EmitInjectorProvider.cs" />
+    <Compile Include="IOC\Injection\Emit\EmitParameterMerger.cs" />
+    <Compile Include="IOC\Injection\Emit\EmitParameterMerger.Generic.cs" />
+    <Compile Include="IOC\Injection\Emit\EmitParameterMergerBuilder.cs" />
+    <Compile Include="IOC\Injection\Emit\InjectorEmitBody.cs" />
+    <Compile Include="IOC\Injection\Func\FuncInjector.cs" />
+    <Compile Include="IOC\Injection\Injector.cs" />
+    <Compile Include="IOC\Injection\Instance\InstanceInjector.cs" />
+    <Compile Include="IOC\Injection\Reflection\ReflectionInjector.cs" />
+    <Compile Include="IOC\Injection\Reflection\ReflectionMemberInjector.cs" />
+    <Compile Include="IOC\IObjectCollectionObserver.cs" />
+    <Compile Include="IOC\IObjectContainer.cs" />
+    <Compile Include="IOC\IObjectObserver.cs" />
+    <Compile Include="IOC\IObjectRegistration.cs" />
+    <Compile Include="IOC\IRegistrationModule.cs" />
+    <Compile Include="IOC\Lifetime.cs" />
+    <Compile Include="IOC\Lifetimes\ContainerLifetime.cs" />
+    <Compile Include="IOC\Lifetimes\ILifetimeProvider.cs" />
+    <Compile Include="IOC\Lifetimes\Lifetime.cs" />
+    <Compile Include="IOC\Lifetimes\LifetimeScope.cs" />
+    <Compile Include="IOC\Lifetimes\ScopeLifetime.cs" />
+    <Compile Include="IOC\Lifetimes\SingletonLifetime.cs" />
+    <Compile Include="IOC\Lifetimes\TransientLifetime.cs" />
+    <Compile Include="IOC\Mapping\IObjectMapper.cs" />
+    <Compile Include="IOC\Mapping\IObjectMapperBuilder.cs" />
+    <Compile Include="IOC\Mapping\ObjectMapperManager.cs" />
+    <Compile Include="IOC\ObjectBuilder.cs" />
+    <Compile Include="IOC\ObjectContainer.cs" />
+    <Compile Include="IOC\Observers\ObjectCollectionObserver.cs" />
+    <Compile Include="IOC\Observers\ObjectCollectionObserverImpl.cs" />
+    <Compile Include="IOC\Observers\ObjectObserver.cs" />
+    <Compile Include="IOC\Observers\ObjectObserverImpl.cs" />
+    <Compile Include="IOC\Parameter.cs" />
+    <Compile Include="IOC\ParameterSet.cs" />
+    <Compile Include="IOC\RegistrationExtensions.cs" />
+    <Compile Include="IOC\Registry\ObjectBuilderGroup.cs" />
+    <Compile Include="IOC\Registry\ObjectBuilderRegistry.cs" />
+    <Compile Include="IOC\Registry\ObjectBuilderRegistry.RegisterUnregister.cs" />
+    <Compile Include="IOC\Registry\ObjectBuilderRegistry.TryGetContains.cs" />
+    <Compile Include="IOC\ResolutionExtensions.cs" />
+    <Compile Include="IOC\Resources.Designer.cs" />
+    <Compile Include="IOC\Utils\ComponentContainer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Delegates.cs" />
+    <Compile Include="System\Disposable.cs" />
+    <Compile Include="System\ExtensionAttribute.cs" />
+    <Compile Include="Threading\ILock.cs" />
+    <Compile Include="Threading\IReaderWriterLockSlim.cs" />
+    <Compile Include="Threading\MonitorLock.cs" />
+    <Compile Include="Threading\OptimisticReaderWriterLock.cs" />
+    <Compile Include="Threading\Spin.cs" />
+    <Compile Include="Threading\SpinLockSlim.cs" />
+    <Compile Include="Threading\SpinReaderWriterLockSlim.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IOC\Configuration\Provider\ReflectionOrEmitRegistrationProvider.resx">
+      <DependentUpon>ReflectionOrEmitRegistrationProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOC\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

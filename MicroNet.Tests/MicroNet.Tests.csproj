@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39AE21FF-C820-49ED-A3E6-C31FA67D9CC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MicroNet.Tests</RootNamespace>
+    <AssemblyName>MicroNet.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\EditController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="DataMapping\ContactMapper.cs" />
+    <Compile Include="Domain\BaseEntity.cs" />
+    <Compile Include="Domain\Contact.cs" />
+    <Compile Include="Domain\Login.cs" />
+    <Compile Include="Filters\ConfirmDeleteAttribute.cs" />
+    <Compile Include="Filters\CustomExceptionFilerAttribute.cs" />
+    <Compile Include="Filters\NotifyDeleteAttribute.cs" />
+    <Compile Include="Filters\RoleBasedAuthorizationAttribute.cs" />
+    <Compile Include="Filters\WriteResultAttribute.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Database.cs" />
+    <Compile Include="Services\ContactService.cs" />
+    <Compile Include="Services\IContactService.cs" />
+    <Compile Include="Services\ILoginService.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Bottom.png" />
+    <Content Include="Images\Middle.png" />
+    <Content Include="Images\Top.png" />
+    <Content Include="Images\TurnOffButton.bmp" />
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MicroNet.IOC\MicroNet.IOC.csproj">
+      <Project>{5075cd3f-be3d-41a5-a835-ba13a6a52f92}</Project>
+      <Name>MicroNet.IOC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MicroNet.Views\MicroNet.Views.csproj">
+      <Project>{dbd895aa-8d03-4b8d-b0e1-b98e6e7d27d8}</Project>
+      <Name>MicroNet.Views</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MicroNet.WinformMVC\MicroNet.WinformMVC.csproj">
+      <Project>{baf8d5aa-9c1e-4fd4-8b60-aef4ce9a8ab6}</Project>
+      <Name>MicroNet.WinformMVC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
